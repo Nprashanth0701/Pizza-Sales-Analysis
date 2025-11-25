@@ -1,70 +1,108 @@
-# 🍕 Pizza Sales Analysis
+# 🍕 Pizza Sales Analysis — Summary Report
 
-Uncovering insights from pizza sales data using SQL.
-
-This project analyzes transactional pizza sales data and extracts meaningful business insights such as revenue, customer ordering behavior, product popularity, and category performance. The goal is to support data-driven decisions for menu design, promotions, and operations.
+This project explores pizza sales data to understand customer behavior, product performance, and overall revenue trends. The dataset includes order information, pizza varieties, pricing, and quantities sold. Using SQL-based analysis, we uncover key insights that can guide business decisions related to menu strategy, staffing, and marketing.
 
 ---
 
-## 📊 Project Overview
+## 📌 Project Goals
 
-The project explores a pizza business dataset using SQL to answer key questions:
+The main objective of this analysis is to answer important business questions, such as:
 
-- How many total orders were placed?
-- What is the total revenue from pizza sales?
-- Which is the highest-priced pizza?
-- What is the most common pizza size ordered?
-- Which pizza types are ordered the most?
-- At what time of day do customers order the most?
-- Which pizza category sells the most?
-- What are the top pizzas by revenue?
-- How much does each pizza category contribute to total revenue?
-- How does revenue grow cumulatively over time?
+- How many orders were placed?
+- How much total revenue was generated?
+- Which pizza sizes and categories are most popular?
+- Which pizzas perform best in terms of quantity and revenue?
+- When do customers place the most orders?
+- How does revenue grow over time?
 
-Each question is solved using SQL queries and interpreted with business context.
+The focus is on understanding **what sells, when it sells, and how it impacts revenue**.
 
 ---
 
-## 📂 Dataset Structure
+## 📂 Dataset Overview
 
-The dataset consists of four relational tables:
+The data consists of four tables:
 
-### `orders`
-Contains high-level order information.
-| Column | Description |
-|------|-------------|
-| order_id | Unique order identifier |
-| order_date | Date of order |
-| order_time | Time of order |
+### 1. Orders
+Contains the timestamp of each customer order.
 
-### `order_details`
-Contains line items belonging to each order.
-| Column | Description |
-|------|-------------|
-| order_details_id | Line item ID |
-| order_id | Linked to orders table |
-| pizza_id | Linked to pizzas table |
-| quantity | Number of units ordered |
+### 2. Order Details
+Links each order to specific pizza items and the quantity purchased.
 
-### `pizzas`
-Contains product-level metadata.
-| Column | Description |
-|------|-------------|
-| pizza_id | Unique pizza ID |
-| pizza_type_id | Linked to pizza_types table |
-| size | Pizza size (S, M, L, XL, XXL etc.) |
-| price | Unit price |
+### 3. Pizzas
+Includes pricing and size for each pizza product.
 
-### `pizza_types`
-Contains catalog-level pizza information.
-| Column | Description |
-|------|-------------|
-| pizza_type_id | Primary key |
-| name | Pizza name |
-| category | Category (Classic / Supreme / Chicken / Veggie) |
-| ingredients | Ingredient list |
+### 4. Pizza Types
+Provides pizza categories (e.g., Classic, Supreme, Veggie, Chicken) and ingredient descriptions.
+
+Together, the tables form a relational structure that allows for deep performance analysis.
 
 ---
 
-## 🔗 Data Model (ER Relationship)
+## 🔍 Key Findings
 
+### ✔ Total Orders and Revenue
+The analysis reveals a healthy volume of orders and significant sales figures, demonstrating strong customer demand across multiple pizza categories.
+
+### ✔ Most Popular Pizza Size
+The **Large (L)** size is the most frequently ordered pizza.  
+This indicates that customers prefer medium-to-large portions when ordering.
+
+### ✔ Best-Selling Pizza Types
+The top ordered pizzas include:
+- **The Classic Deluxe Pizza**
+- **The Barbecue Chicken Pizza**
+- **The Hawaiian Pizza**
+
+These consistently show high order quantities, suggesting wide appeal and strong customer preference.
+
+### ✔ Pizza Category Performance
+Among all categories:
+- **Classic pizzas** have the highest order volume.
+- **Supreme and Chicken** categories follow closely behind.
+- **Veggie pizzas** also maintain consistent sales, indicating solid demand from non-meat consumers.
+
+This informs menu planning and stock management for core product lines.
+
+### ✔ Order Timing
+Most orders occur during afternoon and early evening hours (13:00–19:00).  
+This aligns with typical meal periods, suggesting opportunities for targeted promotions and staffing.
+
+### ✔ Revenue Leaders
+Certain premium pizzas generate significantly more revenue, even if they are ordered less frequently.  
+Items like **Thai Chicken Pizza** and **Barbecue Chicken Pizza** perform strongly in terms of sales value.
+
+This indicates that **pricing strategy matters**, not just popularity.
+
+### ✔ Cumulative Revenue Growth
+Revenue increases steadily over time, demonstrating consistent customer engagement and strong repeat demand.
+
+---
+
+## 🎯 Business Insights
+
+- Focus on **Classic** pizzas as your main product driver—they contribute the most to overall sales.
+- Promote top-performing pizzas such as **Thai Chicken** and **Barbecue Chicken** to boost revenue.
+- Maintain inventory for high-demand sizes (especially **L**).
+- Consider targeted marketing or staffing during afternoon/evening peak hours.
+- Explore premium pricing on popular pizzas that already drive strong revenue.
+
+---
+
+## 🚀 Conclusion
+
+This analysis shows how a simple pizza dataset can provide valuable business insights.  
+By examining order trends, pizza performance, and category revenue, we gain a clearer picture of customer preferences and business opportunities.
+
+The results help decision-makers optimize:
+- Menu offerings  
+- Pricing strategy  
+- Inventory levels  
+- Promotional campaigns  
+- Workforce scheduling  
+
+Ultimately, data-driven insights lead to better customer satisfaction and increased profitability.
+
+---
+
+Thank you for reading 🍕📊
